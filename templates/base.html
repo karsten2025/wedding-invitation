@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>{% block title %}Einladung zur Gartenhochzeit{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="background"></div>
+
+  <!-- HEADER -->
+  <header class="overlay header">
+    <!-- Sprache -->
+    <div class="language-switch">
+      <a href="?lang=de" class="lang-button">🇩🇪 DE</a>
+      <a href="?lang=en" class="lang-button">🇬🇧 EN</a>
+    </div>
+
+    <!-- Fixierter Spruch -->
+    <div class="headline-center">
+      <h1 class="corinthiago">{{ content.heading }}</h1>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="overlay body">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="overlay footer">
+    {% block footer %}{% endblock %}
+  </footer>
+</body>
+</html>

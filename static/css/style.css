@@ -1,0 +1,298 @@
+/* ========== Grundstruktur ========== */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+/* ========== Sprachumschaltung oben rechts ========== */
+.language-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-button {
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.lang-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* ========== Schriftart Corinthiago ========== */
+@font-face {
+  font-family: 'Corinthiago';
+  src: url('../fonts/Corinthiago.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.corinthiago {
+  font-family: 'Corinthiago', cursive;
+  font-size: clamp(2.5rem, 9vw, 7rem); /* mobilfreundlich & skalierend */
+  margin: 2rem 0 1rem 0;
+}
+
+/* ========== Überschriften ========== */
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 1.5rem 0 1rem 0;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: normal;
+}
+
+/* ========== Listen ========== */
+ul {
+  text-align: left;
+  display: inline-block;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+li {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin: 0.25rem 0;
+}
+
+/* ========== Hintergrundbild ========== */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/PADE.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ========== Transparente Sektionen ========== */
+.overlay {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  color: #111;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+  text-align: center;
+  padding-top: 4rem; /* Abstand für Sprachumschalter */
+}
+
+.body {
+  background-color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+
+.footer {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ========== Einzelne Elemente ========== */
+img.main {
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin: 2rem 0;
+}
+
+a.map-link {
+  display: block;
+  margin-top: 2rem;
+  font-size: 3rem;
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: bold;
+}
+
+a.map-link:hover {
+  text-decoration: underline;
+}
+  .corinthiago {
+    font-size: clamp(1.8rem, 6vw, 4.5rem); /* kleiner auf schmalen Displays */
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
+
+  .language-switch {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .map-link {
+    font-size: 1.5rem;
+  }
+
+  .overlay {
+    padding: 1rem;
+  }
+
+  .footer h1.corinthiago {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+/* ========== MEDIA QUERIES ========== */
+
+/* Smartphones (max-width: 600px) */
+@media (max-width: 600px) {
+  .corinthiago {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+
+  .map-link {
+    font-size: 1.2rem;
+  }
+
+  .language-switch {
+    font-size: 0.7rem;
+    top: 0.3rem;
+    right: 0.3rem;
+  }
+
+  .overlay {
+    padding: 1rem;
+  }
+
+  .footer h1.corinthiago {
+    font-size: clamp(1.2rem, 6vw, 2.2rem);
+  }
+}
+
+/* Tablets (601px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .corinthiago {
+    font-size: clamp(5rem, 7vw, 9rem);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  li {
+    font-size: 1.4rem;
+  }
+
+  .map-link {
+    font-size: 2rem;
+  }
+  a.map-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px dashed rgba(255, 174, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+a.map-link:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(255, 174, 0, 0.6);
+  animation: pulse 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    letter-spacing: 0px;
+  }
+  to {
+    letter-spacing: 1.5px;
+  }
+}
+
+  .footer h1.corinthiago {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+}
+
+/* Desktop (ab 1025px) */
+@media (min-width: 1025px) {
+  .corinthiago {
+    font-size: clamp(2.5rem, 9vw, 7rem);
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  li {
+    font-size: 2rem;
+  }
+
+  .map-link {
+    font-size: 3rem;
+  }
+
+  .footer h1.corinthiago {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+}

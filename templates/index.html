@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ content.names }}</h2>
+  <h3>{{ content.date }}</h3>
+
+  <h2>{{ content.bring_title }}</h2>
+  <ul class="list-text">
+    {% for item in content.bring_list %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="https://www.google.com/maps?q=Ferdinandstraße+14,+38300+Wolfenbüttel" class="map-link" target="_blank">
+  📍 {{ content.map_link }} 👉
+</a>
+{% endblock %}
+
+{% block footer %}
+  <h1 class="corinthiago">{{ content.footer }}</h1>
+{% endblock %}
